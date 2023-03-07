@@ -3,6 +3,11 @@ from flask import Flask, url_for, render_template
 app = Flask(__name__)
 
 
+@app.route('/messanger')
+def messanger():
+    return render_template('messanger.html', title='Messanger')
+
+
 @app.route('/')
 @app.route('/index')
 def index():
