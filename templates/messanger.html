@@ -1,14 +1,10 @@
 {% extends "base.html" %}
 
+{% block head %}
+    <link rel="stylesheet" href={{ url_for("static", filename='css/messanger_style.css')}}>
+{% endblock %}
 
 {% block content %}
-<div class="side-menu">
-    <ul>
-        <li><a href="/">Main page</a></li>
-        <li><a href="#">Messanger</a></li>
-        <li><a href="#">Friends</a></li>
-    </ul>
-</div>
 <div class="chat-box">
     <ul class="chat-list">
         <li>
