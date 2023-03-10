@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href={{ url_for('static', filename='css/login_style.css') }}>
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="form">
+            <h1>Login</h1>
+            <form method="post" novalidate>
+                <div>
+                    {{ form.csrf_token }}
+                </div>
+                {% for field in form if field.name != 'csrf_token' %}
+                    <div class="form-item">
+                        {{ field(placeholder=field.name.capitalize()) }}
+                        {% for error in field.errors %}
+                            <div class="error">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -2,10 +2,18 @@
 
 {% block head %}
     <link rel="stylesheet" href={{ url_for("static", filename="css/user_page_style.css") }}>
+    <link rel="stylesheet" href={{ url_for("static", filename='css/side_menu_style.css') }}>
 {% endblock %}
 
 
 {% block content %}
+    <div class="side-menu">
+        <ul>
+            <li><a href="/">Main page</a></li>
+            <li><a href="/messanger">Messanger</a></li>
+            <li><a href="#">Friends</a></li>
+        </ul>
+    </div>
     <div class="user-info">
         <img class="avatar" src={{ url_for("static", filename="img/default-avatar.jpg") }} alt="">
         <span class="user-name">User1</span>
